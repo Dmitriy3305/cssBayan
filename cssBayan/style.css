@@ -1,0 +1,164 @@
+html {
+    background: linear-gradient(30deg, #dee1e1 10%, #f4f4f4 360%);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    box-sizing: border-box;
+}
+h1 {
+    text-shadow: 0 1em 1em rgba(0,0,0,0.3);
+    font-size: 1.5rem; 
+}
+p {
+    margin: 0;
+}
+input {
+    display: none;
+    Visibility: hidden;
+}
+img {
+    width: 10vw;
+    padding: 2%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    transition: 0.3s;
+}
+.item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    background: linear-gradient(360deg,#949494 10%,#efefef 360%);
+    padding: 1%;
+    border: 0.1rem solid black;
+}
+.name-text {
+    font-size: 1rem;
+}
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.item-img {
+    display: flex;
+    justify-content: center;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 1s;
+}
+.cross {
+    width: 2em;
+    transform: rotate(22.5deg);
+    visibility: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 1em 1em rgba(0,0,0,0.16), 0 1em 1em rgba(0,0,0,0.23);
+}
+.accordion:hover .name-text {
+    color: #000080;
+    text-shadow: 0 1em 1em rgba(0,0,0,0.3);
+}
+.accordion:hover .cross {
+    visibility: visible;
+}
+.accordion:hover .label:hover {
+    cursor: grab;
+}
+.label:hover .item-img {
+    visibility: visible;
+    opacity: 1;
+    width: 10vw;
+    height: auto;
+    transition: all 1s;
+}
+input:checked + label .item-img {
+    opacity: 1;
+    width: 10vw;
+    height: auto;
+    transition: all 1s;
+}
+input:checked + label .cross {
+    transform: rotate(45deg);
+    transition: all 0.3s;
+}
+input:checked + label .name-text {
+    color: #000080;
+    text-shadow: 0 1em 1em rgba(0,0,0,0.3);
+}
+input:checked + label .cross {
+    fill: #000080;
+}
+@media (hover: hover) {
+  .accordion:hover .name-text {
+    color: #000080;
+    text-shadow: 0 1em 1em rgba(0,0,0,0.3);
+    }
+.accordion:hover .cross {
+    visibility: visible;
+    }
+.accordion:hover .label:hover {
+    cursor: grab;
+    }
+.label:hover .item-img {
+    visibility: visible;
+    opacity: 1;
+    width: 10vw;
+    height: auto;
+    transition: opacity 1s;
+    }
+}
+@media (min-width: 820px) and (max-width: 1919px) {
+    h1 {
+        font-size: 2rem; 
+    }
+    .name-text {
+        font-size: 1.5rem;
+    }
+    .cross {
+        width: 1.5em;
+        visibility: visible;
+    }
+    .item-title {
+        width: 60vw;
+    }
+    img {
+        width: 30vw;
+        padding: 10%;
+    }
+}
+@media (min-width: 320px) and (max-width: 819px) {
+    h1 {
+        font-size: 2rem; 
+    }
+    .name-text {
+        font-size: 0.9rem;
+    }
+    .cross {
+        width: 1em;
+        visibility: visible;
+    }
+    .item-title {
+        width: 90vw;
+    }
+    img {
+        width: 60vw;
+        padding: 20%;
+    }
+}
